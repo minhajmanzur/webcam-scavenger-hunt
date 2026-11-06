@@ -1,8 +1,18 @@
-# Webcam Scavenger Hunt
+# 🔎 Webcam Scavenger Hunt
 
-A local webcam game built with Python, OpenCV, and Ultralytics YOLO. Find **bottle, cup, carrot, potted plant, and book** before the timer runs out.
+<div align="center">
 
-## Features
+### 📷 Find everyday objects. Hold them steady. Beat the timer! ⏱️
+
+![Illustrative preview of the Webcam Scavenger Hunt interface](assets/scavenger-hunt-preview.svg)
+
+**A local computer-vision game powered by Python, OpenCV, and YOLO26n.**
+
+</div>
+
+> 🖼️ The banner above is an illustration of the app, not a captured live-game screenshot. Live screenshots vary by camera and setup; add an object-only capture from your own run when you’re ready to share one.
+
+## ✨ Features
 
 - Live webcam capture and YOLO26n object detection for five COCO classes
 - One-second presence confirmation with a 350 ms grace period for brief detection flicker
@@ -12,7 +22,11 @@ A local webcam game built with Python, OpenCV, and Ultralytics YOLO. Find **bott
 - Live inference latency and FPS display
 - Local inference; this app does not save or upload webcam frames
 
-## Requirements
+## 🔁 How the hunt works
+
+![Illustration of the local detection and agent pipeline](assets/agent-flow.svg)
+
+## 🧰 Requirements
 
 - Windows, macOS, or Linux
 - Python 3.11 or 3.12
@@ -20,7 +34,7 @@ A local webcam game built with Python, OpenCV, and Ultralytics YOLO. Find **bott
 - Internet access for installing packages and downloading `yolo26n.pt` on the first run
 - CPU is enough to run the demo; a supported GPU can improve performance
 
-## Install and run on Windows
+## 🚀 Install and run on Windows
 
 Open PowerShell in the project directory. The commands below do not require virtual-environment activation:
 
@@ -35,7 +49,7 @@ The lower confidence threshold helps with objects such as books, but may allow m
 
 On macOS or Linux, use the platform’s Python 3.11/3.12 executable, create a virtual environment with `python3 -m venv .venv`, activate it, install `requirements.txt`, and run `python main.py --confidence 0.15`.
 
-## Controls
+## 🎮 Controls
 
 | Key | Action |
 |---|---|
@@ -46,7 +60,7 @@ On macOS or Linux, use the platform’s Python 3.11/3.12 executable, create a vi
 
 The agent automatically gives a hint if the player has been stuck on a target for about 12 seconds. Tool actions are also printed in the terminal.
 
-## Options
+## ⚙️ Options
 
 ```powershell
 # Change the webcam index or game duration
@@ -58,7 +72,7 @@ The agent automatically gives a hint if the player has been stuck on a target fo
 
 Supported color names are red, orange, yellow, green, blue, and purple. Color checks are approximate and can vary with lighting and the object’s background.
 
-## Tests
+## 🧪 Tests
 
 Run the automated logic tests from the project directory:
 
@@ -68,11 +82,11 @@ Run the automated logic tests from the project directory:
 
 The tests cover persistence and flicker handling, scoring, hints, and color checks. Webcam behavior still needs to be checked on the device running the app.
 
-## How it works
+## 🧠 How it works
 
 `main.py` captures frames, runs YOLO, draws detections, and drives the game loop. `presence.py` stabilizes class detections over time. `game_agent.py` contains the rule-based agent and its tools. The agent runs locally and does not call an external LLM service.
 
-## Current limitations
+## 🔭 Current limitations
 
 - The pretrained model recognizes generic COCO classes. It may detect a mug as a cup, but it does not identify handles or distinguish every kind of book.
 - Persistence is tracked per class, not by the identity of an individual object.
@@ -80,6 +94,6 @@ The tests cover persistence and flicker handling, scoring, hints, and color chec
 - Hints are rule-based; the app does not yet collect player feedback to measure whether a hint was correct.
 - Printed-photo detection and Docker packaging are not included in this version. They remain stretch goals.
 
-## Example performance
+## ⚡ Example performance
 
 An initial webcam preview on the developer’s laptop showed about **45 ms inference latency** and **21 FPS**. This is a single machine-specific observation, not a benchmark; performance depends on the camera, lighting, model, and hardware.
