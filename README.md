@@ -10,7 +10,21 @@
 
 </div>
 
-> 🖼️ The banner above is an illustration of the app, not a captured live-game screenshot. Live screenshots vary by camera and setup; add an object-only capture from your own run when you’re ready to share one.
+> 🖼️ The banner above is an illustration of the app. The live webcam captures below are from an actual run.
+
+## 📸 Live webcam captures
+
+These are screenshots from the running app. Green boxes mark objects whose detections stayed stable. The FPS and latency readings are specific to this webcam and machine.
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/screenshots/cup-detected.png" width="280" alt="Live webcam screenshot with a stable cup detection"><br><strong>☕ Cup · 43% · 60 ms · 15.8 FPS</strong></td>
+    <td align="center"><img src="assets/screenshots/carrot-detected.png" width="280" alt="Live webcam screenshot with a stable carrot detection"><br><strong>🥕 Carrot · 64% · 68 ms · 14.1 FPS</strong></td>
+    <td align="center"><img src="assets/screenshots/book-detected.png" width="280" alt="Live webcam screenshot with a stable book detection"><br><strong>📖 Book · 18% · 53 ms · 17.5 FPS</strong></td>
+  </tr>
+</table>
+
+These captures demonstrate stable object detection. They do not show a scored find: the active target was **bottle** in the carrot frame, and the timer had expired in the cup and book frames.
 
 ## ✨ Features
 
